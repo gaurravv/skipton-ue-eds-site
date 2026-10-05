@@ -12,7 +12,7 @@ or change the Managed CDN. Those are environment-owned operations.
 
 ## 1. Create and connect the GitHub repository
 
-1. Create `gaurravv/skipton-ue-eds-demo`.
+1. Create `gaurravv/skipton-ue-eds-site`.
 2. Push this project as its initial content.
 3. Install the AEM Code Sync GitHub App for the repository.
 4. In Cloud Manager, create an AEM Authoring EDS site that uses this repository
