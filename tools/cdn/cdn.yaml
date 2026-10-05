@@ -1,0 +1,264 @@
+kind: "CDN"
+version: "1"
+
+metadata:
+  envTypes: ["dev", "stage", "prod"]
+
+# Three delivery models behind publish-p133255-e1921317.adobeaemcloud.com:
+#   - AEM Core Components pages (WKND)            -> AEM Publish (default, no rule needed)
+#   - EDS + Document Authoring (FAQs, About Us)   -> main--skipton-eds-demo--gaurravv.aem.live
+#   - EDS + Universal Editor (AI-Powered Search)  -> main--skipton-ue-eds-site--gaurravv.aem.live
+#
+# Path ownership (EDS origins must not overlap):
+#   UE site owns   /skipton-ue/*  (code, nav, footer and their media; "Change Site Root")
+#                  /us/en/ue/*    (UE page and its page-relative media)
+#   DA site owns   /us/en/faqs, /us/en/about-us, root /scripts /styles /blocks /icons /fonts
+#                  /assets, /nav, /footer, all other */media_* paths
+#   Everything else stays on AEM Publish.
+
+data:
+  trafficFilters:
+    rules:
+      # Block client for 5m when it exceeds an average of 100 req/sec to origin
+      # on a time window of 10sec.
+      - name: limit-origin-requests-client-ip
+        when:
+          reqProperty: tier
+          equals: publish
+        rateLimit:
+          limit: 100
+          window: 10
+          count: fetches
+          penalty: 300
+          groupBy:
+            - reqProperty: clientIp
+        action: log
+
+      # Block client for 5m when it exceeds an average of 500 req/sec
+      # on a time window of 10sec.
+      - name: limit-requests-client-ip
+        when:
+          reqProperty: tier
+          equals: publish
+        rateLimit:
+          limit: 500
+          window: 10
+          count: all
+          penalty: 300
+          groupBy:
+            - reqProperty: clientIp
+        action: log
+
+      # Block requests coming from OFAC countries.
+      - name: block-ofac-countries
+        when:
+          allOf:
+            - reqProperty: tier
+              in: ["author", "publish"]
+            - reqProperty: clientCountry
+              in:
+                - SY
+                - BY
+                - MM
+                - KP
+                - IQ
+                - CD
+                - SD
+                - IR
+                - LR
+                - ZW
+                - CU
+                - CI
+        action: log
+
+      # Enable recommended WAF protections when WAF is licensed for the environment.
+      - name: block-waf-flags-globally
+        when:
+          reqProperty: tier
+          in: ["author", "publish"]
+        action:
+          type: log
+          wafFlags:
+            - TRAVERSAL
+            - CMDEXE-NO-BIN
+            - XSS
+            - LOG4J-JNDI
+            - BACKDOOR
+            - USERAGENT
+            - SQLI
+            - SANS
+            - TORNODE
+            - NOUA
+            - SCANNER
+            - PRIVATEFILE
+            - NULLBYTE
+
+  requestTransformations:
+    rules:
+      # DA: preserve legacy /content URLs while removing .html internally for EDS.
+      - name: rewrite-content-wknd-pages-to-extensionless
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: path
+                  equals: /content/wknd/us/en/faqs.html
+                - reqProperty: path
+                  equals: /content/wknd/us/en/about-us.html
+        actions:
+          - type: transform
+            reqProperty: path
+            op: replace
+            match: '\.html$'
+            replacement: ''
+
+      # DA: map the short public AEM URLs to the extensionless EDS document paths.
+      - name: rewrite-short-wknd-pages-to-eds-documents
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: path
+                  equals: /us/en/faqs.html
+                - reqProperty: path
+                  equals: /us/en/about-us.html
+                - reqProperty: path
+                  equals: /us/en/faqs
+                - reqProperty: path
+                  equals: /us/en/about-us
+        actions:
+          - type: transform
+            reqProperty: path
+            op: replace
+            match: '^/us/en/(faqs|about-us)(?:\.html)?$'
+            replacement: '/content/wknd/us/en/\1'
+
+      # UE: the public URL lives under /us/en/ue/ so its page-relative media
+      # (/us/en/ue/media_*) cannot collide with the DA pages' /us/en/media_*.
+      # The EDS document itself stays at /us/en/ai-powered-search-ue.
+      - name: rewrite-ue-search-page-to-eds-document
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: path
+                  equals: /us/en/ue/ai-powered-search-ue.html
+                - reqProperty: path
+                  equals: /us/en/ue/ai-powered-search-ue
+        actions:
+          - type: transform
+            reqProperty: path
+            op: replace
+            match: '^/us/en/ue/(ai-powered-search-ue)(?:\.html)?$'
+            replacement: '/us/en/\1'
+
+  originSelectors:
+    rules:
+      # DA: route only the two migrated public pages to EDS.
+      # originalPath remains unchanged after request transformations.
+      - name: route-migrated-wknd-pages-to-eds
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: originalPath
+                  equals: /content/wknd/us/en/faqs.html
+                - reqProperty: originalPath
+                  equals: /content/wknd/us/en/about-us.html
+                - reqProperty: originalPath
+                  equals: /us/en/faqs.html
+                - reqProperty: originalPath
+                  equals: /us/en/about-us.html
+                - reqProperty: originalPath
+                  equals: /us/en/faqs
+                - reqProperty: originalPath
+                  equals: /us/en/about-us
+        action:
+          type: selectOrigin
+          originName: skipton-eds-demo
+          skipCache: true
+
+      # UE: route the AI-Powered Search page to the UE EDS site.
+      - name: route-ue-search-page-to-eds
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: originalPath
+                  equals: /us/en/ue/ai-powered-search-ue.html
+                - reqProperty: originalPath
+                  equals: /us/en/ue/ai-powered-search-ue
+        action:
+          type: selectOrigin
+          originName: skipton-ue-eds-site
+          skipCache: true
+
+      # UE: code, nav, footer and media that the UE site owns.
+      # /skipton-ue/* = code moved under the site root folder plus the nav/footer
+      #                 documents and their media; /us/en/ue/media_* = page media.
+      - name: route-ue-eds-runtime-assets
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: path
+                  matches: '^/skipton-ue/.*$'
+                - reqProperty: path
+                  matches: '^/us/en/ue/media_.*$'
+        action:
+          type: selectOrigin
+          originName: skipton-ue-eds-site
+          skipCache: true
+
+      # DA: EDS runtime assets requested by the DA pages.
+      # The UE-owned prefixes are excluded so this rule never captures them,
+      # regardless of rule evaluation order.
+      - name: route-eds-runtime-assets
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - reqProperty: path
+              doesNotMatch: '^/(?:skipton-ue|us/en/ue)/.*$'
+            - anyOf:
+                - reqProperty: path
+                  matches: '^/(?:nav|footer)(?:\.plain)?\.html$'
+                - reqProperty: path
+                  matches: '^/(?:scripts|styles|fonts|blocks|icons|assets)/.*$'
+                - reqProperty: path
+                  matches: '^.*/media_.*$'
+                - reqProperty: path
+                  equals: /favicon.ico
+                # Operational telemetry script; identical on every EDS origin.
+                - reqProperty: path
+                  matches: '^/\.rum/.*$'
+        action:
+          type: selectOrigin
+          originName: skipton-eds-demo
+          skipCache: true
+
+    origins:
+      - name: skipton-eds-demo
+        domain: main--skipton-eds-demo--gaurravv.aem.live
+      - name: skipton-ue-eds-site
+        domain: main--skipton-ue-eds-site--gaurravv.aem.live

@@ -11,47 +11,47 @@
                     &lt;li&gt;
                     &lt;p&gt;United States&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/ai-powered-search-ue&quot;&gt;en-US&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/es&quot;&gt;es-US&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/ue/ai-powered-search-ue.html&quot;&gt;en-US&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/es.html&quot;&gt;es-US&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
                     &lt;p&gt;Canada&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/ca/en&quot;&gt;en-CA&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/ca/fr&quot;&gt;fr-CA&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/ca/en.html&quot;&gt;en-CA&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/ca/fr.html&quot;&gt;fr-CA&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
                     &lt;p&gt;Switzerland&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/ch/de&quot;&gt;de-CH&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/ch/fr&quot;&gt;fr-CH&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/ch/it&quot;&gt;it-CH&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/ch/de.html&quot;&gt;de-CH&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/ch/fr.html&quot;&gt;fr-CH&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/ch/it.html&quot;&gt;it-CH&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
                     &lt;p&gt;Germany&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/de/de&quot;&gt;de-DE&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/de/de.html&quot;&gt;de-DE&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
                     &lt;p&gt;France&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/fr/fr&quot;&gt;fr-FR&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/fr/fr.html&quot;&gt;fr-FR&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
                     &lt;p&gt;Spain&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/es/es&quot;&gt;es-ES&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/es/es.html&quot;&gt;es-ES&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
                     &lt;p&gt;Italy&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/it/it&quot;&gt;it-IT&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/it/it.html&quot;&gt;it-IT&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;/ul&gt;
@@ -60,24 +60,24 @@
       </section>
       <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" image="/content/dam/skipton-ue-eds/wknd-logo-dk.svg" imageAlt="WKND Logo"/>
-        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/us/en" linkText="WKND"/>
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/us/en.html" linkText="WKND"/>
       </section_1>
       <section_2 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
                     &lt;li&gt;
-                    &lt;p&gt;&lt;a href&#x3D;&quot;/us/en&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href&#x3D;&quot;/us/en.html&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
                     &lt;ul&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/magazine&quot;&gt;Magazine&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/adventures&quot;&gt;Adventures&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/faqs&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/about-us&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/ai-powered-search-ue&quot;&gt;AI-Powered Search&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/magazine.html&quot;&gt;Magazine&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/adventures.html&quot;&gt;Adventures&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/faqs.html&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/about-us.html&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/ue/ai-powered-search-ue.html&quot;&gt;AI-Powered Search&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;/li&gt;
                     &lt;/ul&gt;"/>
       </section_2>
       <section_3 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
-        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/us/en/ai-powered-search-ue" linkText="Search"/>
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/us/en/ue/ai-powered-search-ue.html" linkText="Search"/>
       </section_3>
     </root>
   </jcr:content>

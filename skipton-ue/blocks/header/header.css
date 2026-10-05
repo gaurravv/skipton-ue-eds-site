@@ -311,7 +311,7 @@ header .nav-search .icon-search {
   left: 8px;
   width: 16px;
   height: 16px;
-  background: url('/icons/search-wknd.svg') no-repeat center / contain;
+  background: url('../../icons/search-wknd.svg') no-repeat center / contain;
 }
 
 header .nav-search input {

@@ -4,7 +4,7 @@
 <comment>FileVault Package Properties</comment>
 <entry key="group">skipton-demo</entry>
 <entry key="name">skipton-ue-eds.content</entry>
-<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="version">1.1.0-SNAPSHOT</entry>
 <entry key="description">AI-Powered Search UE page, nav and footer for the Skipton UE EDS demo</entry>
 <entry key="packageType">content</entry>
 <entry key="requiresRoot">false</entry>

@@ -2,12 +2,13 @@
 const isDesktop = window.matchMedia('(width >= 900px)');
 
 /**
- * Fetches the nav fragment: /content first (local preview), then the site root (DA/EDS).
+ * Fetches the nav fragment from the site folder, falling back to the local preview copy.
  * @returns {Promise<DocumentFragment|null>} the parsed nav content
  */
 async function fetchNav() {
-  let resp = await fetch('/content/nav.plain.html');
-  if (!resp.ok) resp = await fetch('/nav.plain.html');
+  // the site's own folder first (shared publish domains), then the local preview copy
+  let resp = await fetch(`${window.hlx.codeBasePath}/nav.plain.html`);
+  if (!resp.ok) resp = await fetch('/content/nav.plain.html');
   if (!resp.ok) return null;
   const template = document.createElement('template');
   template.innerHTML = await resp.text();

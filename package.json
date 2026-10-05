@@ -5,7 +5,7 @@
   "description": "Universal Editor-authored Edge Delivery Services AI-Powered Search demo",
   "scripts": {
     "lint:js": "eslint .",
-    "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
+    "lint:css": "stylelint \"skipton-ue/blocks/**/*.css\" \"skipton-ue/styles/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix"
   },

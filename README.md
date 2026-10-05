@@ -74,6 +74,22 @@ The WKND site configuration (`/conf/wknd`) also needs an Edge Delivery Services
 configuration pointing at `gaurravv/skipton-ue-eds-site`, so that Universal
 Editor loads the component configuration from this repository.
 
+## Shared publish domain
+
+The site runs behind `publish-p133255-e1921317.adobeaemcloud.com` together with
+classic WKND pages (AEM Publish) and the Document Authoring site
+`skipton-eds-demo`. To keep the two Edge Delivery origins from colliding, this
+site owns two URL prefixes:
+
+- `/skipton-ue/`: all code (`blocks`, `scripts`, `styles`, `icons`, `fonts`,
+  following Adobe's "Change Site Root" pattern) plus the nav and footer
+  documents (`/content/wknd/skipton-ue/nav` and `/footer` in AEM);
+- `/us/en/ue/`: the public URL of the AI-Powered Search page, so its
+  page-relative media (`/us/en/ue/media_*`) does not collide with the DA pages.
+
+`tools/cdn/cdn.yaml` is the CDN configuration for the WKND Cloud Manager config
+pipeline that routes these prefixes.
+
 ## Universal Editor configuration
 
 The component palette configuration is in:
