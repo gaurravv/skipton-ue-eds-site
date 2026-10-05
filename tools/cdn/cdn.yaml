@@ -93,6 +93,30 @@ data:
             - PRIVATEFILE
             - NULLBYTE
 
+  redirects:
+    rules:
+      # UE: the search page moved to /us/en/ue/ so its media cannot collide with
+      # the DA pages. Send the earlier public URLs (and the AEM content path,
+      # which the classic Publish tier cannot render) to the new address.
+      - name: redirect-old-ue-search-page
+        when:
+          allOf:
+            - reqProperty: tier
+              equals: publish
+            - reqProperty: domain
+              equals: publish-p133255-e1921317.adobeaemcloud.com
+            - anyOf:
+                - reqProperty: path
+                  equals: /us/en/ai-powered-search-ue.html
+                - reqProperty: path
+                  equals: /us/en/ai-powered-search-ue
+                - reqProperty: path
+                  equals: /content/wknd/us/en/ai-powered-search-ue.html
+        action:
+          type: redirect
+          status: 301
+          location: /us/en/ue/ai-powered-search-ue.html
+
   requestTransformations:
     rules:
       # DA: preserve legacy /content URLs while removing .html internally for EDS.
