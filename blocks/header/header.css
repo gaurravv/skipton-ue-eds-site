@@ -250,6 +250,11 @@ header .nav-brand a:any-link {
   line-height: 27px;
 }
 
+header .nav-brand picture {
+  display: block;
+  line-height: 0;
+}
+
 header .nav-brand img {
   width: 128px;
   height: 48px;

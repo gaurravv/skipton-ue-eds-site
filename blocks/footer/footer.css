@@ -44,6 +44,11 @@ footer .footer-brand a:any-link {
   line-height: 27px;
 }
 
+footer .footer-brand picture {
+  display: block;
+  line-height: 0;
+}
+
 footer .footer-brand img {
   width: 128px;
   height: 48px;
