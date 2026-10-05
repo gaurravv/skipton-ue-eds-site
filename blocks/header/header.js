@@ -15,16 +15,24 @@ async function fetchNav() {
   template.content.querySelectorAll('img[src]').forEach((img) => {
     img.src = new URL(img.getAttribute('src'), resp.url).href;
   });
+  template.content.querySelectorAll('source[srcset]').forEach((source) => {
+    source.srcset = source.getAttribute('srcset').split(',').map((candidate) => {
+      const [url, descriptor] = candidate.trim().split(/\s+/);
+      return [new URL(url, resp.url).href, descriptor].filter(Boolean).join(' ');
+    }).join(', ');
+  });
   return template.content;
 }
 
 /**
- * Removes button decoration that authoring may add to plain links.
+ * Removes button decoration that authoring may add to plain links,
+ * and unwraps paragraphs that authoring adds inside list items.
  * @param {Element} section the fragment section
  */
 function normalizeLinks(section) {
   section.querySelectorAll('a.button').forEach((a) => a.classList.remove('button'));
   section.querySelectorAll('.button-container').forEach((p) => p.classList.remove('button-container'));
+  section.querySelectorAll('li > p').forEach((p) => p.replaceWith(...p.childNodes));
 }
 
 /**

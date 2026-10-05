@@ -51,6 +51,13 @@
           "multi": false
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "content_imageAlt",
+          "value": "",
+          "label": "Image alt text"
+        },
+        {
           "component": "richtext",
           "valueType": "string",
           "name": "content_richtext",

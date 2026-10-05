@@ -9,8 +9,8 @@
       </section>
       <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" filter="tabs" name="Tabs">
-          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Tab" model="tab" title="Tab 1" modelFields="[title,content_image,content_richtext]" content_image="/content/dam/wknd-shared/de/adventures/cycling-tuscany/adobestock-59459597.jpeg"></item_0>
-          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Tab" model="tab" title="Tab 2" modelFields="[title,content_image,content_richtext]" content_image="/content/dam/wknd-shared/de/adventures/surf-camp-in-costa-rica/adobestock-278302117.jpeg"></item_1>
+          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Tab" model="tab" title="Tab 1" modelFields="[title,content_image,content_imageAlt,content_richtext]" content_image="/content/dam/wknd-shared/de/adventures/cycling-tuscany/adobestock-59459597.jpeg" content_imageAlt="Aerial view over city of Siena, Italy"></item_0>
+          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Tab" model="tab" title="Tab 2" modelFields="[title,content_image,content_imageAlt,content_richtext]" content_image="/content/dam/wknd-shared/de/adventures/surf-camp-in-costa-rica/adobestock-278302117.jpeg" content_imageAlt="Guy in Costa Rica catching waves."></item_1>
         </block>
       </section_1>
     </root>
