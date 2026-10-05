@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: "https://author-p133255-e1921317.adobeaemcloud.com/bin/franklin.delivery/gaurravv/skipton-ue-eds-site/main"
+    type: "markup"
+    suffix: ".html"

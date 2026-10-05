@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="group">skipton-demo</entry>
+<entry key="name">skipton-ue-eds.content</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="description">AI-Powered Search UE page, nav and footer for the Skipton UE EDS demo</entry>
+<entry key="packageType">content</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="createdBy">skipton-ue-eds-demo</entry>
+<entry key="created">2026-10-05T09:15:45.000Z</entry>
+</properties>

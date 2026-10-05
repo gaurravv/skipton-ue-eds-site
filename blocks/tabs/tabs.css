@@ -1,0 +1,72 @@
+/* Block: tabs -- values extracted from source computed styles (.cmp-tabs) */
+.tabs .tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 18px 0;
+  padding: 0;
+}
+
+.tabs .tabs-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  padding: 8px 16px;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 21px;
+  text-align: initial;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tabs .tabs-panel-content > p,
+.tabs .tabs-list button p {
+  margin: 0;
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+  border-bottom-color: transparent;
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* source sets outline: none on :focus; keep a keyboard-only indicator for a11y */
+.tabs .tabs-list button:focus {
+  outline: none;
+}
+
+.tabs .tabs-list button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+.tabs .tabs-panel {
+  padding: 0;
+  overflow: auto;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs .tabs-panel picture {
+  display: block;
+}
+
+.tabs .tabs-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 7px 0;
+}
+
+.tabs .tabs-panel-content > :first-child {
+  margin-top: 0;
+}

@@ -1,0 +1,8 @@
+{
+  "mappings": [
+    "/content/wknd/:/"
+  ],
+  "includes": [
+    "/content/wknd/"
+  ]
+}

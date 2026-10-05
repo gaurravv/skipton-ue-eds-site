@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="Footer">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" image="/content/dam/skipton-ue-eds/wknd-logo-light.svg" imageAlt="WKND Logo"/>
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/us/en" linkText="WKND"/>
+      </section>
+      <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
+                    &lt;li&gt;
+                    &lt;p&gt;&lt;a href&#x3D;&quot;/us/en&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/magazine&quot;&gt;Magazine&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/adventures&quot;&gt;Adventures&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/faqs&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/about-us&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/us/en/ai-powered-search-ue&quot;&gt;AI-Powered Search&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;/ul&gt;"/>
+      </section_1>
+      <section_2 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;h4&gt;Follow Us&lt;/h4&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;#facebookwknd&quot;&gt;&lt;img src&#x3D;&quot;/content/dam/skipton-ue-eds/social-facebook.svg&quot; alt&#x3D;&quot;Facebook&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;#twitterWKND&quot;&gt;&lt;img src&#x3D;&quot;/content/dam/skipton-ue-eds/social-twitter.svg&quot; alt&#x3D;&quot;Twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;#instagramwknd&quot;&gt;&lt;img src&#x3D;&quot;/content/dam/skipton-ue-eds/social-instagram.svg&quot; alt&#x3D;&quot;Instagram&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;"/>
+      </section_2>
+      <section_3 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Ⓒ 2019,  WKND Site.&lt;/p&gt;&lt;p&gt;WKND is a fictitious adventure and travel website created by Adobe to demonstrate how anyone can use Adobe Experience Manager to build a beautiful, feature-rich website over a single weekend. This site is built entirely with Adobe Experience Manager &lt;a href&#x3D;&quot;https://docs.adobe.com/content/help/en/experience-manager-core-components/using/introduction.html&quot;&gt;Core Components&lt;/a&gt; and &lt;a href&#x3D;&quot;https://github.com/adobe/aem-project-archetype&quot;&gt;Archetype&lt;/a&gt; that are available as open source code to the public. The entire &lt;a href&#x3D;&quot;https://github.com/adobe/aem-guides-wknd/&quot;&gt;site source code&lt;/a&gt; is available as open source as well and is accompanied with a &lt;a href&#x3D;&quot;https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html&quot;&gt;detailed tutorial&lt;/a&gt; on how to recreate the site.&lt;/p&gt;&lt;p&gt;Many of the beautiful images in the WKND site are available for purchase via &lt;a href&#x3D;&quot;https://stock.adobe.com/&quot;&gt;Adobe Stock&lt;/a&gt;.&lt;/p&gt;"/>
+      </section_3>
+    </root>
+  </jcr:content>
+</jcr:root>

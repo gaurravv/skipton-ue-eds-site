@@ -1,0 +1,11 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "skipton-ue-eds-demo": {
+      "previewOrg": "gaurravv",
+      "previewSite": "skipton-ue-eds-demo",
+      "contentHostUrl": "https://content.da.live/gaurravv/skipton-ue-eds-demo/",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

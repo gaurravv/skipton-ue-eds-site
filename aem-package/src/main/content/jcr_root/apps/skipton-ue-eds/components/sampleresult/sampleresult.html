@@ -1,0 +1,15 @@
+<article class="sample-result"
+         data-aue-resource="${resource.path}"
+         data-aue-type="reference"
+         data-aue-label="Sample Result">
+  <h3 data-aue-prop="title"
+      data-aue-type="text"
+      data-aue-label="Title">${properties.title}</h3>
+  <div data-aue-prop="description"
+       data-aue-type="richtext"
+       data-aue-label="Description">${properties.description @ context='html'}</div>
+  <a data-aue-prop="link"
+     data-aue-type="text"
+     data-aue-label="Link"
+     href="${properties.link}">Explore this result</a>
+</article>

@@ -1,0 +1,51 @@
+{
+  "definitions": [
+    {
+      "title": "Search Demo",
+      "id": "search-demo",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Search Demo",
+              "model": "search-demo"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "search-demo",
+      "fields": [
+        {
+          "component": "text-input",
+          "name": "label",
+          "label": "Search label",
+          "valueType": "string"
+        },
+        {
+          "component": "text-input",
+          "name": "placeholder",
+          "label": "Input placeholder",
+          "valueType": "string"
+        },
+        {
+          "component": "text-input",
+          "name": "buttonLabel",
+          "label": "Button label",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "helper",
+          "label": "Helper text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

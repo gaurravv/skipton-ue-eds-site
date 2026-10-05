@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "ai-search-page",
+      "urls": [
+        "https://publish-p133255-e1921317.adobeaemcloud.com/content/wknd/us/en/ai-powered-search.html"
+      ],
+      "representativeUrl": "https://publish-p133255-e1921317.adobeaemcloud.com/content/wknd/us/en/ai-powered-search.html",
+      "description": "WKND AI-powered search landing page",
+      "urlPattern": "/content/wknd/us/en/*",
+      "blocks": [
+        {
+          "name": "search-demo",
+          "instances": [
+            "main .contentaisearch"
+          ]
+        },
+        {
+          "name": "tabs",
+          "instances": [
+            "main .tabs.panelcontainer"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "ai-search-panel",
+          "selector": [
+            "main .contentaisearch"
+          ],
+          "style": null,
+          "blocks": [
+            "search-demo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2",
+          "name": "page-title",
+          "selector": [
+            "main > .cmp-container > .aem-Grid > .title",
+            "main .title"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main .title h1.cmp-title__text"
+          ]
+        },
+        {
+          "id": "rc3",
+          "name": "page-image",
+          "selector": [
+            "main > .cmp-container > .aem-Grid > .image",
+            "main .image"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main .image img.cmp-image__image"
+          ]
+        },
+        {
+          "id": "rc4",
+          "name": "tabs-gallery",
+          "selector": [
+            "main .tabs.panelcontainer"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "groups": [
+    {
+      "title": "Default Content",
+      "id": "default",
+      "components": [
+        {
+          "title": "Text",
+          "id": "text",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/text/v1/text",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Title",
+          "id": "title",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/title/v1/title",
+                "template": {
+                  "model": "title"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Image",
+          "id": "image",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/image/v1/image",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Button",
+          "id": "button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/button/v1/button",
+                "template": {
+                  "model": "button"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sections",
+      "id": "sections",
+      "components": [
+        {
+          "title": "Section",
+          "id": "section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "section"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Blocks",
+      "id": "blocks",
+      "components": [
+        {
+          "title": "Cards",
+          "id": "cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards",
+                  "filter": "cards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns",
+          "id": "columns",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Fragment",
+          "id": "fragment",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Fragment",
+                  "model": "fragment"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero",
+          "id": "hero",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero",
+                  "model": "hero"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tabs",
+          "id": "tabs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Tabs",
+                  "filter": "tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tab",
+          "id": "tab",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab",
+                  "model": "tab",
+                  "title": "Tab"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Search Demo",
+          "id": "search-demo",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Search Demo",
+                  "model": "search-demo"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "WKND - Universal Editor (classic template)",
+      "id": "wknd-legacy",
+      "components": [
+        {
+          "title": "Search Hero",
+          "id": "search-hero",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "skipton-ue-eds/components/searchhero",
+                "template": {
+                  "name": "Search Hero",
+                  "model": "search-hero"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Search Panel",
+          "id": "search-panel-legacy",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "skipton-ue-eds/components/searchpanel",
+                "template": {
+                  "name": "Search Panel",
+                  "model": "search-panel-legacy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Sample Result",
+          "id": "sample-result",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "skipton-ue-eds/components/sampleresult",
+                "template": {
+                  "name": "Sample Result",
+                  "model": "sample-result"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AI Disclaimer",
+          "id": "ai-disclaimer",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "skipton-ue-eds/components/aidisclaimer",
+                "template": {
+                  "name": "AI Disclaimer",
+                  "model": "ai-disclaimer"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

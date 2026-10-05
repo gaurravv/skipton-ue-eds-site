@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="AI-Powered Search" jcr:description="Search WKND's adventures using AEM Core WCM Components' Content AI semantic search - GRANITE-71500." modelFields="[jcr:title,jcr:description,keywords]">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" buttonLabel="Search" label="Find your next adventure" model="search-demo" modelFields="[label,placeholder,buttonLabel,helper]" name="Search Demo" placeholder="Try “family-friendly hiking”"></block>
+        <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="AI-Powered Search" titleType="h1"/>
+        <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" image="/content/dam/wknd-shared/de/adventures/yosemite-backpacking/adobestock-196967522.jpg" imageAlt="family in yosemite"/>
+      </section>
+      <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" filter="tabs" name="Tabs">
+          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Tab" model="tab" title="Tab 1" modelFields="[title,content_image,content_richtext]" content_image="/content/dam/wknd-shared/de/adventures/cycling-tuscany/adobestock-59459597.jpeg"></item_0>
+          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Tab" model="tab" title="Tab 2" modelFields="[title,content_image,content_richtext]" content_image="/content/dam/wknd-shared/de/adventures/surf-camp-in-costa-rica/adobestock-278302117.jpeg"></item_1>
+        </block>
+      </section_1>
+    </root>
+  </jcr:content>
+</jcr:root>

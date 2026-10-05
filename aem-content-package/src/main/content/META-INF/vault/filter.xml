@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+  <filter root="/content/wknd/us/en/ai-powered-search-ue"/>
+  <filter root="/content/wknd/nav"/>
+  <filter root="/content/wknd/footer"/>
+  <filter root="/content/dam/skipton-ue-eds"/>
+</workspaceFilter>

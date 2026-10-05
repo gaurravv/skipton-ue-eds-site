@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="group">skipton-demo</entry>
+<entry key="name">skipton-ue-eds.ui.apps</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">application</entry>
+</properties>

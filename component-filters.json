@@ -1,0 +1,59 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "tabs",
+      "search-demo"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab"
+    ]
+  },
+  {
+    "id": "skipton-ue-eds/components/page",
+    "components": [
+      "search-hero",
+      "search-panel-legacy",
+      "sample-result",
+      "ai-disclaimer"
+    ]
+  }
+]

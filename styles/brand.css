@@ -1,0 +1,13 @@
+/* WKND brand tokens extracted from the source site */
+:root {
+  --heading-font-family: asar, georgia, "Times New Roman", times, serif;
+  --body-font-family: "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif;
+  --background-color: #fff;
+  --text-color: #f00;
+  --link-color: #0045ff;
+  --link-hover-color: #0045ff;
+  --separator-color: #ebebeb;
+  --content-max-width: 1164px;
+  --content-inset: 14px;
+  --heading-size-xxl: 40px;
+}
