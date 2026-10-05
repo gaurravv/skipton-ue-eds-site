@@ -98,6 +98,8 @@ data:
       # UE: the search page moved to /us/en/ue/ so its media cannot collide with
       # the DA pages. Send the earlier public URLs (and the AEM content path,
       # which the classic Publish tier cannot render) to the new address.
+      # Match on originalPath: request transformations run first and rewrite the
+      # new URL to /us/en/ai-powered-search-ue, so matching on path would loop.
       - name: redirect-old-ue-search-page
         when:
           allOf:
@@ -106,11 +108,11 @@ data:
             - reqProperty: domain
               equals: publish-p133255-e1921317.adobeaemcloud.com
             - anyOf:
-                - reqProperty: path
+                - reqProperty: originalPath
                   equals: /us/en/ai-powered-search-ue.html
-                - reqProperty: path
+                - reqProperty: originalPath
                   equals: /us/en/ai-powered-search-ue
-                - reqProperty: path
+                - reqProperty: originalPath
                   equals: /content/wknd/us/en/ai-powered-search-ue.html
         action:
           type: redirect
