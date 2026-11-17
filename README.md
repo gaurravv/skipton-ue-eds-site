@@ -16,36 +16,45 @@ The URLs above become available only after the repository is created in GitHub
 and connected as an AEM Authoring EDS site. Do not point the current DA site at
 this repository.
 
-## Included AEM package
+## Included AEM configuration packages
 
-`aem-package/` is a standalone FileVault content package that provides:
+The page-creation setup uses separate FileVault package types:
 
-- the **WKND UE EDS Page** editable template;
-- a UE page component;
-- Search Hero, Search Panel, Sample Result, and AI Disclaimer components;
-- template policies which allow those components in the page container.
+- `aem-package/` (`application`): `/apps/skipton-ue-eds`. Legacy custom
+  components remain available for existing content; new EDS pages do not use them.
+- `aem-config-package/` (`container`): `/apps/skipton-ue-eds-config`, with
+  author-only Universal Editor URL Service configuration for
+  `core/franklin/components/page/v1/page`.
+- `aem-template-package/` (`content`): `/conf/skipton-ue-eds`, including the
+  **WKND UE EDS Page** template. Its initial content uses the Franklin page,
+  root, and section components, matching the migrated EDS page rather than
+  extending the classic Core Components page. Legacy policies are retained,
+  but are no longer attached to this EDS template.
 
-Build it with:
+Build and check from the repository root:
 
 ```sh
-cd aem-package
-mvn clean package
+python3 tools/test_ue_template.py
+mvn -f aem-package/pom.xml clean verify
+mvn -f aem-config-package/pom.xml clean verify
+mvn -f aem-template-package/pom.xml clean verify
 ```
 
-Install the produced ZIP in the target AEM Cloud Service environment as part of
-the existing AEM application's `ui.apps` package, or upload it to the Package
-Manager in a non-production environment. The target project must provide the
-Core Components dependency used by the editable template policies.
+Deploy `/apps` through the existing application's immutable package and `/conf`
+through its mutable content package. Do not mix the two into `ui.apps`.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for editor-service configuration merging,
+installation, and verification.
 
-The package creates no customer content and does not overwrite the existing
-`/content/wknd/us/en/ai-powered-search` ContentAI page. After deployment, use
-**Create → Page → WKND UE EDS Page** under `/content/wknd/us/en` and create the
-pilot page as `ai-powered-search-ue`.
+None of these packages includes authored `/content` pages. After
+deployment, use **Create → Page → WKND UE EDS Page** under
+`/content/wknd/us/en`, choose a new page name, and click **Edit**. The intended
+result is Universal Editor with an empty EDS section ready for content.
 
-Note: the WKND UE EDS Page template extends the classic Core Components page
-(`core/wcm/components/page/v3/page`), which Edge Delivery cannot render. Pages
-for this site should use the Edge Delivery page component
-(`core/franklin/components/page/v1/page`), as the content package below does.
+Existing pages created with the former classic-based template are not migrated
+by this update. For a disposable page such as `another`, create a fresh page
+after deployment, validate it, and remove the old one only after preserving
+any needed content. Do not change only its resource type or reinstall the
+migrated content snapshot to repair it.
 
 ## Migrated content package
 
@@ -104,7 +113,7 @@ They define the Edge Delivery page, section, default content (text, title,
 image, button), and the Tabs and Search Demo blocks, along with the repository's
 cards, columns, fragment and hero blocks. The classic Search Hero, Search Panel,
 Sample Result and AI Disclaimer components from `aem-package` are kept in their
-own group for the WKND UE EDS Page template.
+own legacy group; they are not the new Franklin template's block implementation.
 
 ## Documentation
 

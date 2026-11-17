@@ -10,7 +10,7 @@
   <packaging>content-package</packaging>
 
   <name>Skipton UE EDS AEM package</name>
-  <description>Universal Editor template and components for the Skipton EDS demo</description>
+  <description>Retained legacy components for existing Skipton demo content</description>
 
   <build>
     <plugins>

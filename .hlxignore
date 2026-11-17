@@ -6,5 +6,7 @@ package.json
 package-lock.json
 test/*
 aem-package/*
+aem-config-package/*
+aem-template-package/*
 aem-content-package/*
 tools/*
