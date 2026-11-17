@@ -12,9 +12,8 @@ external service.
 - Preview: `https://main--skipton-ue-eds-site--gaurravv.aem.page/`
 - Live: `https://main--skipton-ue-eds-site--gaurravv.aem.live/`
 
-The URLs above become available only after the repository is created in GitHub
-and connected as an AEM Authoring EDS site. Do not point the current DA site at
-this repository.
+The repository is connected to AEM Author as an AEM Authoring EDS site. Do
+not point the Document Authoring site at this repository.
 
 ## Included AEM configuration packages
 
@@ -101,19 +100,61 @@ pipeline that routes these prefixes.
 
 ## Universal Editor configuration
 
-The component palette configuration is in:
+The component palette configuration is in three files at the repository root:
 
-```text
-component-definition.json
-component-models.json
-component-filters.json
-```
+- `component-definition.json`: the component palette. Each entry names the AEM
+  resource type and the block name it renders as.
+- `component-models.json`: the fields shown in the properties panel.
+- `component-filters.json`: which components may be placed inside which
+  container (main, section, or a block such as Cards or Tabs).
 
-They define the Edge Delivery page, section, default content (text, title,
-image, button), and the Tabs and Search Demo blocks, along with the repository's
-cards, columns, fragment and hero blocks. The classic Search Hero, Search Panel,
-Sample Result and AI Disclaimer components from `aem-package` are kept in their
-own legacy group; they are not the new Franklin template's block implementation.
+The palette groups are:
+
+- **Default content:** Text, Title, Image, Button.
+- **Sections:** Section.
+- **Blocks:** Cards (Card), Columns, Fragment, Hero, Tabs (Tab), Search Demo and
+  Quote. These use `core/franklin/components/block/v1/block`.
+- **WKND - Universal Editor (classic template):** Search Hero, Search Panel,
+  Sample Result and AI Disclaimer. These are classic HTL components from
+  `aem-package` (`skipton-ue-eds/components/...`), kept for content created with
+  the former classic template. They are not part of the Franklin EDS template.
+
+After changing these files, push to `main`; AEM Author reads them from
+`main--skipton-ue-eds-site--gaurravv.aem.live`. Reload Universal Editor (clear
+its cache if needed) to see palette changes.
+
+## How the code flows
+
+1. **Authoring:** authors edit pages under `/content/wknd` in Universal Editor
+   on AEM Author. AEM renders the page with `data-aue-*` attributes so the
+   editor can select and edit blocks and fields.
+2. **Publishing:** Publish in Universal Editor sends the page to EDS, using the
+   AEM environment's technical account (it must have the publish role in the
+   site configuration). `fstab.yaml` and `paths.json` tell EDS where to fetch the
+   content and how to map `/content/wknd/...` to public URLs.
+3. **Browser:** EDS serves semantic HTML plus `head.html`, which loads
+   `/skipton-ue/scripts/aem.js`, `/skipton-ue/scripts/scripts.js` and
+   `/skipton-ue/styles/styles.css`. `aem.js` derives
+   `window.hlx.codeBasePath = /skipton-ue` from the `scripts.js` URL, so every
+   block, icon and font loads from `/skipton-ue/...`. `loadPage()` runs:
+   - **`loadEager`:** `decorateMain` (icons, fragment auto-blocks, sections,
+     blocks, buttons), then loads only the first section for a fast Largest
+     Contentful Paint.
+   - **`loadLazy`:** header, remaining sections, footer, `lazy-styles.css`, fonts.
+   - **`loadDelayed`:** imports `delayed.js` after 3 seconds.
+4. **Blocks:** for each block, `aem.js` loads
+   `/skipton-ue/blocks/<name>/<name>.css` and `<name>.js` and calls
+   `decorate(block)`.
+5. **Live editing (Universal Editor only):** `scripts/editor-support.js`
+   listens for `aue:content-patch`, `-update`, `-add`, `-move`, `-remove` and
+   `-copy` events. It sanitises the updated HTML with DOMPurify, replaces only
+   the changed block, section or default content, re-runs the decoration and
+   `loadBlock`, and reloads the page if it cannot apply the change in place.
+   `scripts/editor-support-rte.js` makes rich-text fields (for example in Quote)
+   editable inline.
+
+The block code and runtime are the same as in the Document Authoring site
+(`skipton-eds-demo`); only the authoring source and the editor glue differ.
 
 ## Documentation
 
