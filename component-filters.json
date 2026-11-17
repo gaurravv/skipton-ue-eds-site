@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "tabs",
-      "search-demo"
+      "search-demo",
+      "quote"
     ]
   },
   {
@@ -53,7 +54,8 @@
       "search-hero",
       "search-panel-legacy",
       "sample-result",
-      "ai-disclaimer"
+      "ai-disclaimer",
+      "quote"
     ]
   }
 ]

@@ -356,5 +356,24 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+  "id": "quote",
+  "fields": [
+    { 
+      "component": "richtext", 
+      "valueType": "string", 
+      "name": "quote", 
+      "value": "", 
+      "label": "Quote" 
+    },
+    { 
+      "component": "text", 
+      "valueType": "string", 
+      "name": "author", 
+      "value": "", 
+      "label": "Author" 
+    }
+    ]
   }
 ]
