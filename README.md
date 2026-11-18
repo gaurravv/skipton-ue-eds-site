@@ -119,7 +119,13 @@ The palette groups are:
   `aem-package` (`skipton-ue-eds/components/...`), kept for content created with
   the former classic template. They are not part of the Franklin EDS template.
 
-After changing these files, push to `main`; AEM Author reads them from
+Do not edit these three files by hand; they are generated. Each block keeps its
+definition, model and filters in `skipton-ue/blocks/<name>/_<name>.json`, and
+default content, section, page metadata and the legacy group live in
+`models/_*.json`. `models/_component-*.json` stitch the partials together.
+Run `npm run build:json` to regenerate the root files, and commit them.
+
+After changing them, push to `main`; AEM Author reads them from
 `main--skipton-ue-eds-site--gaurravv.aem.live`. Reload Universal Editor (clear
 its cache if needed) to see palette changes.
 

@@ -1,0 +1,157 @@
+{
+  "definitions": [
+    {
+      "title": "Search Hero",
+      "id": "search-hero",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "skipton-ue-eds/components/searchhero",
+            "template": {
+              "name": "Search Hero",
+              "model": "search-hero"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Search Panel",
+      "id": "search-panel-legacy",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "skipton-ue-eds/components/searchpanel",
+            "template": {
+              "name": "Search Panel",
+              "model": "search-panel-legacy"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Sample Result",
+      "id": "sample-result",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "skipton-ue-eds/components/sampleresult",
+            "template": {
+              "name": "Sample Result",
+              "model": "sample-result"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "AI Disclaimer",
+      "id": "ai-disclaimer",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "skipton-ue-eds/components/aidisclaimer",
+            "template": {
+              "name": "AI Disclaimer",
+              "model": "ai-disclaimer"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "search-hero",
+      "fields": [
+        {
+          "component": "text-input",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Introduction",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "search-panel-legacy",
+      "fields": [
+        {
+          "component": "text-input",
+          "name": "label",
+          "label": "Search label",
+          "valueType": "string"
+        },
+        {
+          "component": "text-input",
+          "name": "placeholder",
+          "label": "Input placeholder",
+          "valueType": "string"
+        },
+        {
+          "component": "text-input",
+          "name": "buttonLabel",
+          "label": "Button label",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "helperText",
+          "label": "Helper text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "sample-result",
+      "fields": [
+        {
+          "component": "text-input",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "text-input",
+          "name": "link",
+          "label": "Link",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "ai-disclaimer",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "label": "Disclaimer",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "skipton-ue-eds/components/page",
+      "components": [
+        "search-hero",
+        "search-panel-legacy",
+        "sample-result",
+        "ai-disclaimer"
+      ]
+    }
+  ]
+}

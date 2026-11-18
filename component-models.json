@@ -24,22 +24,6 @@
     ]
   },
   {
-    "id": "image",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      }
-    ]
-  },
-  {
     "id": "title",
     "fields": [
       {
@@ -77,6 +61,22 @@
             "value": "h6"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
       }
     ]
   },
@@ -216,35 +216,21 @@
     ]
   },
   {
-    "id": "tab",
+    "id": "quote",
     "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Tab Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "content_image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "content_imageAlt",
-        "value": "",
-        "label": "Image alt text"
-      },
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "content_richtext",
+        "name": "quote",
         "value": "",
-        "label": "Content"
+        "label": "Quote"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "value": "",
+        "label": "Author"
       }
     ]
   },
@@ -278,6 +264,56 @@
     ]
   },
   {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Tab Title"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "content_image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "content_imageAlt",
+        "value": "",
+        "label": "Image alt text"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content_richtext",
+        "value": "",
+        "label": "Content"
+      }
+    ]
+  },
+  {
+    "id": "search-hero",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Introduction",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "search-panel-legacy",
     "fields": [
       {
@@ -302,23 +338,6 @@
         "component": "richtext",
         "name": "helperText",
         "label": "Helper text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "search-hero",
-    "fields": [
-      {
-        "component": "text-input",
-        "name": "title",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "label": "Introduction",
         "valueType": "string"
       }
     ]
@@ -355,25 +374,6 @@
         "label": "Disclaimer",
         "valueType": "string"
       }
-    ]
-  },
-  {
-  "id": "quote",
-  "fields": [
-    { 
-      "component": "richtext", 
-      "valueType": "string", 
-      "name": "quote", 
-      "value": "", 
-      "label": "Quote" 
-    },
-    { 
-      "component": "text", 
-      "valueType": "string", 
-      "name": "author", 
-      "value": "", 
-      "label": "Author" 
-    }
     ]
   }
 ]

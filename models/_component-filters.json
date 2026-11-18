@@ -1,0 +1,17 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "...": "./_section.json#/filters"
+  },
+  {
+    "...": "../skipton-ue/blocks/*/_*.json#/filters"
+  },
+  {
+    "...": "./_wknd-legacy.json#/filters"
+  }
+]
