@@ -112,8 +112,8 @@ The palette groups are:
 
 - **Default content:** Text, Title, Image, Button.
 - **Sections:** Section.
-- **Blocks:** Cards (Card), Columns, Fragment, Hero, Tabs (Tab), Search Demo and
-  Quote. These use `core/franklin/components/block/v1/block`.
+- **Blocks:** Cards (Card), Columns, Fragment, Hero, Tabs (Tab) and
+  Search Demo. These use `core/franklin/components/block/v1/block`.
 - **WKND - Universal Editor (classic template):** Search Hero, Search Panel,
   Sample Result and AI Disclaimer. These are classic HTL components from
   `aem-package` (`skipton-ue-eds/components/...`), kept for content created with
@@ -156,7 +156,7 @@ its cache if needed) to see palette changes.
    `-copy` events. It sanitises the updated HTML with DOMPurify, replaces only
    the changed block, section or default content, re-runs the decoration and
    `loadBlock`, and reloads the page if it cannot apply the change in place.
-   `scripts/editor-support-rte.js` makes rich-text fields (for example in Quote)
+   `scripts/editor-support-rte.js` makes rich-text fields
    editable inline.
 
 The block code and runtime are the same as in the Document Authoring site
